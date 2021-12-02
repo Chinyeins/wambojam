@@ -1,3 +1,3 @@
 # wambojam
-GameJam
+GameJam (Team Wambo)
 🤓
