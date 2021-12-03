@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -19,10 +21,12 @@ public class MainMenu : MonoBehaviour
 
 
     public void startGame() {
-        Debug.Log("Starting Game");
+        Debug.Log("Loading MainLevel...");
+        SceneManager.LoadScene(1);
     }
 
     public void exitGame() {
-        Debug.Log("Exit Game");
+        Debug.Log("Quitting Game...");
+        Application.Quit();
     }
 }
