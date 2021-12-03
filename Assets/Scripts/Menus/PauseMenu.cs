@@ -17,10 +17,9 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if(Input.GetButton("Cancel")) {
-            //TODO: FIX this! make delay 
+        if(Input.GetButtonDown("Cancel")) {
             toggleMenu();
         }
     }
