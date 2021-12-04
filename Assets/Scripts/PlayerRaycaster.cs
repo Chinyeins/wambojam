@@ -7,7 +7,7 @@ public class PlayerRaycaster : MonoBehaviour
   public Color OutlineColor = Color.yellow;
   public float OutlineWidth = 5f;
   GameObject lastTarget;
-  void FixedUpdate()
+  void Update()
   {
     gameObject.layer = 2;
     Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
@@ -16,6 +16,8 @@ public class PlayerRaycaster : MonoBehaviour
     if (Physics.Raycast(ray, out hit, 100))
     {
       GameObject target = hit.collider.gameObject;
+
+      handleInteract(target);
 
       if (target == lastTarget) return;
 
@@ -46,8 +48,6 @@ public class PlayerRaycaster : MonoBehaviour
       outline = target.AddComponent<Outline>();
     }
 
-    target.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
-
     outline.enabled = true;
     outline.OutlineMode = Outline.Mode.OutlineAll;
     outline.OutlineColor = OutlineColor;
@@ -58,6 +58,22 @@ public class PlayerRaycaster : MonoBehaviour
   {
     var outline = target.GetComponent<Outline>();
     if (outline) outline.enabled = false;
+  }
+
+  void handleInteract(GameObject target)
+  {
+    if (target.tag == "Interactive" && Input.GetButtonDown("Fire1"))
+    {
+      // general interaction
+      target.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+
+      //snipper interaction
+      if (target.GetComponent<Snippet>() != null)
+      {
+        Snippet snippet = gameObject.GetComponent<Snippet>();
+        GameObject.Find("GameState").GetComponent<GameStateManager>().collectInventoryItem(snippet);
+      }
+    }
   }
 }
 
