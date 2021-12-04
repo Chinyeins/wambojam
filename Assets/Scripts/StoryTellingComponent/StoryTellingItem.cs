@@ -23,7 +23,7 @@ public class StoryTellingItem : MonoBehaviour
     void Start()
     {
         if(StoryAudioClip == null) {
-            Debug.LogError("No Storytelling audio initalized. Please add Audio clip");
+            Debug.LogWarning("No Storytelling audio initalized. Please add Audio clip");
         }
 
         if(Snippet == null) {

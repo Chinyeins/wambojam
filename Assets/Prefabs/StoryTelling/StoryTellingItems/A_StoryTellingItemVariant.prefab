@@ -11,7 +11,7 @@ PrefabInstance:
       propertyPath: StoryText
       value: "\u201EIch erinnere mich wieder. Meine Schwester ist schwer krank und
         wurde aus diesem Grund in ihrem Zimmer eingesperrt. Ich muss sie irgendwie
-        da rausholen, aber zuerst muss ich zu ihr gelangen.\u201C "
+        da rausholen, aber zuerst muss ich zu ihr gelangen.\u201C"
       objectReference: {fileID: 0}
     - target: {fileID: 2573727547917367177, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
       propertyPath: m_Name
