@@ -383,7 +383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6700265686505050837}
   - component: {fileID: 1593753902078808227}
-  - component: {fileID: 9131359041505449317}
+  - component: {fileID: 7421197017203225147}
   m_Layer: 0
   m_Name: StoryTellingScreen
   m_TagString: StoryTellingUI
@@ -424,7 +424,8 @@ MonoBehaviour:
   OnAudioFinishedPlaying:
     m_PersistentCalls:
       m_Calls: []
---- !u!82 &9131359041505449317
+  ClueFoundSFX: {fileID: 8300000, guid: 9658f0dd8b0285c45851182cf62a5b7d, type: 3}
+--- !u!82 &7421197017203225147
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -435,7 +436,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
