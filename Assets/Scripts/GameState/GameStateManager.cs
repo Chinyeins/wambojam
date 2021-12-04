@@ -10,11 +10,11 @@ public class GameStateManager : MonoBehaviour
 
     public void collectInventoryItem(InventoryItem inventoryItem)
     {
-        gameState.inventory.inventoryItems.Add(inventoryItem);
+        // gameState.inventory.inventoryItems.Add(inventoryItem);
 
-        if(isPictureFinished()) {
-            nextScene();
-        }
+        // if(isPictureFinished()) {
+        //     nextScene();
+        // }
     }
 
     public void insertSnippetIntoPicture(InventoryItem inventoryItem)
