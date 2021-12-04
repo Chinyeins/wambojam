@@ -54,8 +54,7 @@
 /// Made changes that you think should come "Out of the box"? E-mail the modified Script with A new entry on the top of the Change log to: modifiedassets@aedangraves.info
 
 using UnityEngine;
-// EDIT: Dennis
-//using UnityEngine.UI;
+using UnityEngine.UI;
 using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
@@ -97,11 +96,8 @@ public class FirstPersonAIO : MonoBehaviour {
     public bool autoCrosshair = false;
     public bool drawStaminaMeter = true;
     float smoothRef;
-    /*
-     Dennis
     Image StaminaMeter;
     Image StaminaMeterBG;
-    */
     public Sprite Crosshair;
     public Vector3 targetAngles;
     private Vector3 followAngles;
