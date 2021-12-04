@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameState : MonoBehaviour
 {
     public int iteration=1;
-    public Inventory inventory;
-    public PictureOfMother pictureOfMother;
+    public Inventory inventory=new Inventory();
+    public PictureOfMother pictureOfMother=new PictureOfMother();
 
     // Start is called before the first frame update
     void Start()

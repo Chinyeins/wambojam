@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class GameStateManager : MonoBehaviour
 {
 
@@ -11,8 +12,22 @@ public class GameStateManager : MonoBehaviour
     {
         if(inventoryItem.inventoryItemType.isUnique)
         {
-            if(gameState.inventory.inventoryItems.Contains(inventoryItem))
+            if (gameState.inventory.inventoryItems.Contains(inventoryItem))
+            {
                 gameState.inventory.inventoryItems.Add(inventoryItem);
+                switch(inventoryItem.inventoryItemType.inventoryTypeAction)
+                {
+                    case InventoryItemType.ITA_STORY:
+                        new GameStateAction().startStoryTelling();
+                        break;
+                    case InventoryItemType.ITA_RESETLEVEL:
+                        new GameStateAction().resetLevel();
+                        break;                        
+                    case InventoryItemType.ITA_NEWTARGET:
+                        new GameStateAction().newElement();
+                        break;
+                }
+            }
         }
         else
         {
@@ -70,7 +85,7 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameState = GameObject.Find("GameState").GetComponent<GameState>();
     }
 
     // Update is called once per frame
