@@ -11,7 +11,7 @@ public class InventoryItemType
         ITA_NEWTARGET
     }
     public bool isUnique = false;
-    public InventoryTypeAction InventoryTypeAction;
+    public InventoryTypeAction inventoryTypeAction;
 
     // Start is called before the first frame update
     void Start()

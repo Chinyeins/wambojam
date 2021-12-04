@@ -17,13 +17,13 @@ public class GameStateManager : MonoBehaviour
                 gameState.inventory.inventoryItems.Add(inventoryItem);
                 switch(inventoryItem.inventoryItemType.inventoryTypeAction)
                 {
-                    case InventoryItemType.ITA_STORY:
+                    case InventoryItemType.InventoryTypeAction.ITA_STORY:
                         new GameStateAction().startStoryTelling();
                         break;
-                    case InventoryItemType.ITA_RESETLEVEL:
+                    case InventoryItemType.InventoryTypeAction.ITA_RESETLEVEL:
                         new GameStateAction().resetLevel();
                         break;                        
-                    case InventoryItemType.ITA_NEWTARGET:
+                    case InventoryItemType.InventoryTypeAction.ITA_NEWTARGET:
                         new GameStateAction().newElement();
                         break;
                 }
@@ -91,6 +91,7 @@ public class GameStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (isPictureFinished())
+            nextScene();
     }
 }
