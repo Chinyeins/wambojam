@@ -1,8 +1,10 @@
+using System.Net.WebSockets;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Story telling Component.
@@ -21,6 +23,8 @@ public class StoryTellingComponent : MonoBehaviour
     protected AudioSource audioSource;
 
     public UnityEvent OnAudioFinishedPlaying;
+
+    private bool isOpen = false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +52,12 @@ public class StoryTellingComponent : MonoBehaviour
     private void Update()
     {
         if(Input.GetButtonDown("OpenInventory")) {
-            this.showScreen();
+
+            if(this.isOpen) {
+                this.hideScreen();
+            } else {
+                this.showScreen();
+            }
         }
     }
 
@@ -62,7 +71,6 @@ public class StoryTellingComponent : MonoBehaviour
             return;
         }
 
-
         if(this.StoryText != null) {
             this.StoryText.text = this.currentItem.getText();
         }
@@ -73,10 +81,14 @@ public class StoryTellingComponent : MonoBehaviour
 
         //play audio clip 
         AudioClip clip = this.currentItem.getAudio();
-        this.audioSource.PlayOneShot(clip);
+        float clipLen = 0;
+        if(clip != null){
+            this.audioSource.PlayOneShot(clip);
+            clipLen = clip.length;
+        }
 
         //call even after clip is done playing
-        Invoke("callAudioFinishedPlayEvent", clip.length);
+        Invoke("callAudioFinishedPlayEvent", clipLen);
     }
 
     private void callAudioFinishedPlayEvent() {
@@ -88,12 +100,21 @@ public class StoryTellingComponent : MonoBehaviour
     /// Display Screen. Starts Story Telling logic. Entrypoint for component.
     /// </summary>
     public void showScreen() {
-        if(this.canvas) {
+        if(this.canvas && this.currentItem != null) {
+
+            this.isOpen = true;
+
             this.canvas.SetActive(true);
 
+            EventSystem.current.SetSelectedGameObject(this.canvas.gameObject);
 
             this.StartStoryTellingSequence();
         }
+    }
+
+    public void showScreen(StoryTellingItem item) {
+        this.SetStoryTellingItem(item);
+        this.showScreen();
     }
 
     /// <summary>
@@ -102,6 +123,8 @@ public class StoryTellingComponent : MonoBehaviour
     public void hideScreen() {
         if(this.canvas) {
             this.canvas.SetActive(false);
+
+            this.isOpen = false;
         }
 
         this.audioSource.Stop();

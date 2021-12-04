@@ -12,5 +12,9 @@ public class Snippet : InventoryItem
 
     public Sprite getImage() {
         return this.SnippedImage;
+    }
+
+    public void interact() {
+        Debug.Log("INTERACT with: " + gameObject.name);
     }    
 }
