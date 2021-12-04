@@ -64,12 +64,13 @@ public class PlayerRaycaster : MonoBehaviour
   {
     if (target.tag == "Interactive" && Input.GetButtonDown("Fire1"))
     {
-      // general interaction
+      // general interaction - can be removed if we don't want it
       target.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
 
       //snipper interaction
       if (target.GetComponent<Snippet>() != null)
       {
+        // do something
         Snippet snippet = gameObject.GetComponent<Snippet>();
         GameObject.Find("GameState").GetComponent<GameStateManager>().collectInventoryItem(snippet);
       }
