@@ -20,7 +20,7 @@ PrefabInstance:
     - target: {fileID: 4753192081610618273, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
       propertyPath: SnippedImage
       value: 
-      objectReference: {fileID: 21300000, guid: 6140cccdbc97a784396f3d65500e9080, type: 3}
+      objectReference: {fileID: 21300000, guid: ef7fe43f27f18504d9df0f0f6b1dc588, type: 3}
     - target: {fileID: 5093511957423816036, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
       propertyPath: m_RootOrder
       value: 0
