@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PictureOfMother : MonoBehaviour
 {
-    public List<Snippet> snippets;
-    public List<SnippetType> snippetsRequired;
+    public List<Snippet> snippets=new List<Snippet>();
+    
 
 
     // Start is called before the first frame update

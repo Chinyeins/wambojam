@@ -10,11 +10,11 @@ public class GameStateManager : MonoBehaviour
 
     public void collectInventoryItem(InventoryItem inventoryItem)
     {
-        // gameState.inventory.inventoryItems.Add(inventoryItem);
+        gameState.inventory.inventoryItems.Add(inventoryItem);
 
-        // if(isPictureFinished()) {
-        //     nextScene();
-        // }
+         if(isPictureFinished()) {
+             gameOver();
+         }
     }
 
     public void insertSnippetIntoPicture(InventoryItem inventoryItem)
@@ -25,41 +25,10 @@ public class GameStateManager : MonoBehaviour
 
     private bool isPictureFinished()
     {
-        bool allFound = true;
-        foreach(SnippetType snippetTypeRequired in gameState.pictureOfMother.snippetsRequired)
-        {
-            bool snippetFound = false;
-            foreach(Snippet snippet in gameState.pictureOfMother.snippets)
-            {
-                if(snippet.snippetType == snippetTypeRequired)
-                {
-                    snippetFound = true;
-                    break;
-                }                
-            }
-            if (!snippetFound)
-            {
-                allFound = false;
-                break;
-            }
-        }
-        return allFound;
+        return gameState.pictureOfMother.snippets.Count == 6;
     }
 
-    private void nextScene()
-    {
-        gameState.iteration++;
-        LevelData levelData = GameObject.Find("LevelData").GetComponent<LevelData>();
-        gameState.pictureOfMother.snippetsRequired = new List<SnippetType>();
-        gameState.pictureOfMother.snippets = new List<Snippet>();
-        
-        foreach(SnippetType snippetType in levelData.snippetTypesRequired[gameState.iteration])
-        {
-            gameState.pictureOfMother.snippetsRequired.Add(snippetType);
-        }
 
-        SceneManager.LoadScene("MainLevel");
-    }
 
     private void gameOver() {
         SceneManager.LoadScene("GameOver");
@@ -70,7 +39,7 @@ public class GameStateManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameState = GameObject.Find("GameState").GetComponent<GameState>();
+        gameState = new GameState();
     }
 
     // Update is called once per frame
