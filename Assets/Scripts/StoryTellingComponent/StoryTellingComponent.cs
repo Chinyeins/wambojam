@@ -38,6 +38,10 @@ public class StoryTellingComponent : MonoBehaviour
         this.audioSource = gameObject.GetComponent<AudioSource>();
 
         this.OnAudioFinishedPlaying = new UnityEvent();
+
+
+        //hide canvas initially
+        this.canvas.SetActive(false);
     }
 
 
