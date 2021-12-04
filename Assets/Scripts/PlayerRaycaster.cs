@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerRaycaster : MonoBehaviour
 {
-
+  public Color OutlineColor = Color.yellow;
+  public float OutlineWidth = 5f;
   GameObject lastTarget;
   void FixedUpdate()
   {
@@ -49,8 +50,8 @@ public class PlayerRaycaster : MonoBehaviour
 
     outline.enabled = true;
     outline.OutlineMode = Outline.Mode.OutlineAll;
-    outline.OutlineColor = Color.yellow;
-    outline.OutlineWidth = 5f;
+    outline.OutlineColor = OutlineColor;
+    outline.OutlineWidth = OutlineWidth;
   }
 
   void DisableOutline(GameObject target)
