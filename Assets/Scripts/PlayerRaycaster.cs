@@ -17,7 +17,10 @@ public class PlayerRaycaster : MonoBehaviour
 
     foreach (GameObject interactive in interactives)
     {
-      interactive.GetComponent<Outline>().enabled = false;
+      Outline outline = interactive.GetComponent<Outline>();
+      if(outline) {
+        outline.enabled = false;
+      }
     }
     if (Physics.Raycast(ray, out hit, 100))
     {
