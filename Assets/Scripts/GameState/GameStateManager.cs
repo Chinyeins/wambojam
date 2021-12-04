@@ -8,19 +8,15 @@ public class GameStateManager : MonoBehaviour
 
     public GameState gameState;
 
-    public void collectInventoryItem(InventoryItem inventoryItem)
+    public void collectInventoryItem(Snippet snippet)
     {
-        gameState.inventory.inventoryItems.Add(inventoryItem);
+        if (!gameState.pictureOfMother.snippets.Contains(snippet))
+            gameState.pictureOfMother.snippets.Add(snippet);
 
-         if(isPictureFinished()) {
-             gameOver();
-         }
-    }
-
-    public void insertSnippetIntoPicture(InventoryItem inventoryItem)
-    {
-        gameState.inventory.inventoryItems.Remove(inventoryItem);
-        gameState.pictureOfMother.snippets.Add((Snippet)inventoryItem);
+        if (isPictureFinished())
+        {
+            gameOver();
+        }
     }
 
     private bool isPictureFinished()
@@ -30,7 +26,8 @@ public class GameStateManager : MonoBehaviour
 
 
 
-    private void gameOver() {
+    private void gameOver()
+    {
         SceneManager.LoadScene("GameOver");
     }
 
