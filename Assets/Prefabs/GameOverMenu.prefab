@@ -27,12 +27,12 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782415618723022822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 239492532055001598}
   m_Father: {fileID: 8022664363348473332}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -151,7 +151,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &899762933891286518
 RectTransform:
   m_ObjectHideFlags: 0
@@ -168,9 +168,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: -17, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &2474030265472213965
 CanvasRenderer:
@@ -277,7 +277,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9055649769399593866
 RectTransform:
   m_ObjectHideFlags: 0
@@ -417,8 +417,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 5029465469750589286}
   - {fileID: 7156507717300404940}
+  - {fileID: 5029465469750589286}
   - {fileID: 1535576506575937390}
   m_Father: {fileID: 7632251067021006869}
   m_RootOrder: 0
@@ -560,7 +560,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -715,12 +715,12 @@ RectTransform:
   - {fileID: 899762933891286518}
   - {fileID: 9055649769399593866}
   m_Father: {fileID: 8022664363348473332}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -400, y: 344.07}
+  m_SizeDelta: {x: -400, y: 341.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1122388994910133153
 CanvasRenderer:
@@ -779,12 +779,12 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 2
   m_Viewport: {fileID: 8016028302517952344}
   m_HorizontalScrollbar: {fileID: 8474489103581604997}
   m_VerticalScrollbar: {fileID: 885238817520039661}
   m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 0
   m_HorizontalScrollbarSpacing: -3
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
@@ -823,7 +823,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1137,10 +1137,10 @@ RectTransform:
   m_Father: {fileID: 8016028302517952344}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 300}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &8472228930904761782
 GameObject:
@@ -1186,75 +1186,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43acf7d3834a05b4aa41f1fe0ebc8982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 1739867703907333842}
-  Story: "Wir wachen als Junge im Bett auf und stehen auf. Wir k\xF6nnen uns an nichts
-    erinnern. \u201EEs regnet. Ich kann mich an nichts erinnern. Wo bin ich? Wer
-    bin ich?\u201C Wir laufen durchs Zimmer und finden einen Bilderrahmen, wo wir
-    ein Schnipsel finden von einem Bild. C: \u201EDas muss ein altes Foto sein. Nur
-    ich bin zu erkennen, aber warum ist es zerrissen? Ich frage mich, wo die anderen
-    Teile sind.\u201C Wir laufen zur T\xFCr und finden raus, dass die T\xFCr abgeschlossen
-    ist. \u201EKomisch. Abgeschlossen. Vielleicht finde ich einen Schl\xFCssel.\u201C
-    Wir laufen durchs Zimmer und l\xF6sen R\xE4tzel. Wir finden einen Schl\xFCssel
-    und \xF6ffnen die T\xFCr. Wir laufen durch das Haus und es wirkt sehr verlassen.
-    \u201EIch frage mich, wo ich hier bin.\u201C Wir h\xF6ren husten aus dem oberen
-    Geschoss und wollen nachsehen aber die Treppe ist verbarrikadiert. \u201EWer
-    macht denn bitte sowas?\u201C Wir finden einen zweiten Schnipsel und erinnern
-    uns. A: \u201EIch erinnere mich wieder. Meine Schwester ist schwer krank und
-    wurde aus diesem Grund in ihrem Zimmer eingesperrt. Ich muss sie irgendwie da
-    rausholen, aber zuerst muss ich zu ihr gelangen.\u201C Wir wachen erneut in unserem
-    Zimmer auf und sind leicht verwirrt. \u201EWas ist passiert? Ich war doch gerade
-    auf der Treppe.\u201C Wir stehen auf und laufen zum Bilderrahmen, wo nun zwei
-    Schnipsel drinnen sind. \u201EWie ist das hier her gekommen? Ich muss zu meiner
-    Schwester.\u201C  Wir verlassen das Zimmer und die Treppe ist weiterhin verbarrikadiert.
-    \u201EVielleicht finde ich einen anderen weg.\u201C Wir laufen im Haus herrum
-    und bemerken, das alle T\xFCren verschlossen sind, bis auf das Wohnzimmer. Ein
-    Blitz schl\xE4gt in der Ferne ein und das Zimmer wird kurz beleuchtet. Wir erkennen
-    eine Person im Schaukelstuhl aber, sobald das Licht erlischt, verschwindet diese
-    Person auch. Der Schaukelstuhl bewegt sich von alleine. \u201EHallo!? Ist da
-    wer?!\u201C Wir erkunden das Wohnzimmer und l\xF6sen R\xE4tzel. Wir k\xF6nnen
-    aus dem Fenster sehen und finden eine Art Grabstein. \u201EIch frage mich, wer
-    dort liegt.\u201C Wir finden einen weiteren Schl\xFCssel, der f\xFCr das Bad
-    ist. Wir erkennen etwas in der Asche vom Kamin und greifen rein. Ein weiterer
-    Schnipsel wird gefunden: E: \u201EIch erinnere mich an diese Schuhe und das Kleid.
-    Sie geh\xF6ren zu Mutter. Sie hat immer in ihrem Schaukelstuhl gesessen und aus
-    dem Fenster  geschaut.\u201C Wir wachen erneut in unserem Zimmer auf und sind
-    wieder verwirrt. \u201ESeltsam. Ich war doch gerade noch im Wohnzimmer.\u201C
-    Wir stehen erneut auf und laufen zum Bilderrahmen. Alle drei Schnipsel sind vor-
-    handen. Wir bemerken, dass wir einen Schl\xFCssel bei uns tragen. \u201EIch sollte
-    mich im Bad umsehen.\u201C Wir bewegen uns ins Bad und schlie\xDFen die T\xFCr
-    auf. Das Bad wirkt sehr verlassen.  Ein Ast knallt durch das Fenster. Man h\xF6rt
-    den Donner und es wird schnell kalt. \u201EIch sollte mich schnell umsehen, bevor
-    ich zu einem Eiszapfen werde.\u201C Wir sehen uns im Bad rum und finden einen
-    Teddyb\xE4ren, mit einer Naht am R\xFCcken, im Schrank. \u201EDieser Teddyb\xE4r
-    kommt mir bekannt vor, aber ich wei\xDF nicht woher.\u201C  Wir nehmen den Teddyb\xE4ren
-    mit und l\xF6sen weiterhin R\xE4tzel. Wir finden einen Schl\xFCssel, der f\xFCr
-    die K\xFCche ist in einem Wandschrank. Ein weiterer Blitz schl\xE4gt ein und
-    erh\xE4lt das Zimmer. Wir erkennen eine Person hinter uns im Spiegel, aber sie
-    verschwindet sofort wieder. \u201EZeige dich du b\xF6ser Geist!\u201C Wir sehen
-    einen Schnipsel in der Wanne und nehmen ihn. F: \u201EIch kann mich an mein Holzschwert
-    erinnern. Ich habe fr\xFCher immer gerne  damit gespielt.\u201C Wir wachen erneut
-    in unserem Zimmer auf und sind wieder verwirrt. \u201EWas passiert hier? Das
-    Bad ist nicht hier.\u201C Wir stehen erneut auf und laufen zum Bilderrahmen.
-    Alle vier Schnipsel sind vor- handen. Wir bemerken, dass wir einen neuen Schl\xFCssel
-    bei uns tragen. \u201EVielleicht finde ich was in der K\xFCche, was mir weiterhelfen
-    kann.\u201C Wir bewegen uns durchs Wohnzimmer und erreichen die K\xFCche. Wir
-    schlie\xDFen die  T\xFCr auf und betreten sie. Der K\xFChlschrank ist mit einem
-    Schloss verriegelt. \u201EIch frage mich, wie ich das Schloss \xF6ffnen kann.\u201C
-    Wir sehen uns um und finden auf dem Tisch unser Holzschwert. Wir sammeln es auf.
-    \u201EVielleicht kann es mir sp\xE4ter n\xFCtzlich sein.\u201C Wir l\xF6sen weiterhin
-    R\xE4tzel und finden im K\xFChlschrank viele verschiedene Gl\xE4ser. Sie sind
-    mit etwas gef\xFChlt, was man nicht erkennen kann. \u201EDas sieht nicht sehr
-    appetitlich aus.\u201C Wir finden zwischen den Gl\xE4sern einen weiteren Schnipsel
-    und erinnern uns. D: \u201EJetzt wei\xDF ich wieder, woher ich den Teddy kenne.
-    Er geh\xF6rt meiner Schwester. Sie hat immer verschiedene Sachen in ihm versteckt,
-    damit Mutter es nicht finden konnte.\u201C Wir wachen erneut in unserem Zimmer
-    auf und sind wieder verwirrt. \u201EIch versteh nicht, was mit mir los ist.\u201C 
-    Wir k\xF6nnen nun Messer in der K\xFCche nehmen und damit den Teddy \xF6ffnen.
-    Wir finden einen weiteren Schl\xFCssel, der f\xFCr den Eingang ist. Wir laufen
-    zur Haust\xFCr und finden vor der T\xFCr einen weiteren Schnipsel. B: \u201EMutter?\u201C
-    Wir kommen nicht wieder ins Zimmer zur\xFCck, aber ein Geist rennt auf uns zu.
-    Wir \xF6ffnen schnell die T\xFCr und rennen raus in den Regen. Demo Ende. Das
-    fertige Bild wird im Rahmen gezeigt."
 --- !u!1 &9090049423510594990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1280,7 +1211,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9090049423510594990}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1290,7 +1221,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 707.1, y: 1062.8}
+  m_SizeDelta: {x: 689.26, y: 1062.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8540250729592365345
 CanvasRenderer:
@@ -1324,7 +1255,7 @@ MonoBehaviour:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 0
