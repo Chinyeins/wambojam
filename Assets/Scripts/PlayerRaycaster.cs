@@ -5,32 +5,59 @@ using UnityEngine;
 public class PlayerRaycaster : MonoBehaviour
 {
 
-  private GameObject[] interactives;
+  GameObject lastTarget;
   void FixedUpdate()
   {
-
+    gameObject.layer = 2;
     Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
     RaycastHit hit;
 
-
-    interactives = GameObject.FindGameObjectsWithTag("Interactive");
-
-    foreach (GameObject interactive in interactives)
-    {
-      Outline outline = interactive.GetComponent<Outline>();
-      if(outline) {
-        outline.enabled = false;
-      }
-    }
     if (Physics.Raycast(ray, out hit, 100))
     {
-      if (hit.collider.gameObject.tag == "Interactive")
+      GameObject target = hit.collider.gameObject;
+
+      if (target == lastTarget) return;
+
+      if (target.tag == "Interactive")
       {
-        Debug.DrawLine(ray.origin, hit.point);
-        hit.collider.gameObject.GetComponent<Outline>().enabled = true;
-        Debug.Log("Interactive Hit");
-        hit.collider.gameObject.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+        AddOrEnableOutline(target);
       }
+      else
+      {
+        if (lastTarget?.tag == "Interactive")
+        {
+          DisableOutline(lastTarget);
+        }
+      }
+      lastTarget = target;
     }
   }
+
+  void AddOrEnableOutline(GameObject target)
+  {
+    Outline outline;
+    if (target.GetComponent<Outline>() != null)
+    {
+      outline = target.GetComponent<Outline>();
+    }
+    else
+    {
+      outline = target.AddComponent<Outline>();
+    }
+
+    target.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
+
+    outline.enabled = true;
+    outline.OutlineMode = Outline.Mode.OutlineAll;
+    outline.OutlineColor = Color.yellow;
+    outline.OutlineWidth = 5f;
+  }
+
+  void DisableOutline(GameObject target)
+  {
+    var outline = target.GetComponent<Outline>();
+    if (outline) outline.enabled = false;
+  }
 }
+
+
