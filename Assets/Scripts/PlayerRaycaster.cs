@@ -84,8 +84,12 @@ public class PlayerRaycaster : MonoBehaviour
         StoryTellingItem item = parent.GetComponent<StoryTellingItem>();
 
         //set item in StoryTellingComponent and Show UI
-        StoryTellingComponent storyTellingComponent = gameObject.GetComponentInChildren<StoryTellingComponent>();
-        storyTellingComponent.showScreen(item);
+        GameObject storyTellingUI = GameObject.FindWithTag("StoryTellingUI");
+
+        if(storyTellingUI != null) {
+          StoryTellingComponent storyTellingComponent = storyTellingUI.GetComponent<StoryTellingComponent>();
+          storyTellingComponent.showScreen(item);
+        }
       }
     }
   }

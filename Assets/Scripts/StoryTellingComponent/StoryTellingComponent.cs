@@ -26,6 +26,9 @@ public class StoryTellingComponent : MonoBehaviour
 
     private bool isOpen = false;
 
+    public AudioClip ClueFoundSFX;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +68,8 @@ public class StoryTellingComponent : MonoBehaviour
     /// Start storytellling and show screen
     /// </summary>
     public void StartStoryTellingSequence() {
+        this.audioSource = gameObject.GetComponent<AudioSource>();
+        
         if(currentItem == null) {
             Debug.LogError("Story telling item not initalized. Canot tell story...");
 
@@ -79,16 +84,24 @@ public class StoryTellingComponent : MonoBehaviour
             this.SnippedThumbnail.sprite = this.currentItem.getImage();
         }
 
+        this.playClueFound();
+
         //play audio clip 
         AudioClip clip = this.currentItem.getAudio();
         float clipLen = 0;
-        if(clip != null){
+        if(clip != null) {
             this.audioSource.PlayOneShot(clip);
             clipLen = clip.length;
         }
 
         //call even after clip is done playing
         Invoke("callAudioFinishedPlayEvent", clipLen);
+    }
+
+    private void playClueFound() {
+        if(ClueFoundSFX != null) {
+            this.audioSource.PlayOneShot(ClueFoundSFX);
+        }
     }
 
     private void callAudioFinishedPlayEvent() {
