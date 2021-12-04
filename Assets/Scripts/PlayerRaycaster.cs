@@ -15,7 +15,7 @@ public class PlayerRaycaster : MonoBehaviour
 
     if (Physics.Raycast(ray, out hit, 100))
     {
-      GameObject target = hit.collider.gameObject;
+      GameObject target = hit.transform.gameObject;
 
       handleInteract(target);
 
@@ -67,11 +67,25 @@ public class PlayerRaycaster : MonoBehaviour
       // general interaction
       target.GetComponent<Renderer>().material.SetColor("_Color", Color.red);
 
-      //snipper interaction
-      if (target.GetComponent<Snippet>() != null)
+
+      //get storyTellingPrefab GameObject
+      GameObject parent = target.transform.parent.gameObject;
+
+      //get snippet
+      if (parent.GetComponent<Snippet>() != null)
       {
+        //add snipped to game state (collected)
         Snippet snippet = gameObject.GetComponent<Snippet>();
-        GameObject.Find("GameState").GetComponent<GameStateManager>().collectInventoryItem(snippet);
+        //GameObject.Find("GameState").GetComponent<GameStateManager>().collectInventoryItem(snippet);
+      }
+
+      //get StorytellingItem
+      if(parent.GetComponent<StoryTellingItem>() != null) {
+        StoryTellingItem item = parent.GetComponent<StoryTellingItem>();
+
+        //set item in StoryTellingComponent and Show UI
+        StoryTellingComponent storyTellingComponent = gameObject.GetComponentInChildren<StoryTellingComponent>();
+        storyTellingComponent.showScreen(item);
       }
     }
   }
