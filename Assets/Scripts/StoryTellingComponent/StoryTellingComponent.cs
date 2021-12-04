@@ -64,7 +64,7 @@ public class StoryTellingComponent : MonoBehaviour
         }
 
         if(this.SnippedThumbnail != null) {
-            this.SnippedThumbnail.sprite = this.currentItem.getImage().sprite;
+            this.SnippedThumbnail.sprite = this.currentItem.getImage();
         }
 
         //play audio clip 

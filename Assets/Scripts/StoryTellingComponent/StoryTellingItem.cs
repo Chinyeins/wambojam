@@ -40,7 +40,7 @@ public class StoryTellingItem : MonoBehaviour
         return this.StoryAudioClip;
     }
 
-    public Image getImage() {
+    public Sprite getImage() {
         return this.Snippet.getImage();
     }
 

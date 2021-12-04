@@ -7,11 +7,10 @@ public class Snippet : InventoryItem
 {
     public SnippetType snippetType;
 
-    public Image SnippedImage;
+    public Sprite SnippedImage;
 
 
-
-    public Image getImage() {
+    public Sprite getImage() {
         return this.SnippedImage;
     }    
 }
