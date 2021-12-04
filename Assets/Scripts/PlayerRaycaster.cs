@@ -75,8 +75,8 @@ public class PlayerRaycaster : MonoBehaviour
       if (parent.GetComponent<Snippet>() != null)
       {
         //add snipped to game state (collected)
-        Snippet snippet = gameObject.GetComponent<Snippet>();
-        //GameObject.Find("GameState").GetComponent<GameStateManager>().collectInventoryItem(snippet);
+        Snippet snippet = parent.GetComponent<Snippet>();
+        GameObject.Find("GameState").GetComponent<GameStateManager>().collectInventoryItem(snippet);
       }
 
       //get StorytellingItem

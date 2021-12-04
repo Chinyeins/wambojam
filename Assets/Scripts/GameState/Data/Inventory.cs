@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Inventory
 {
-    public List<InventoryItem> inventoryItems;
+    public List<InventoryItem> inventoryItems = new List<InventoryItem>();
 }

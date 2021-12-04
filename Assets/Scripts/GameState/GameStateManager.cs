@@ -10,28 +10,10 @@ public class GameStateManager : MonoBehaviour
 
     public void collectInventoryItem(InventoryItem inventoryItem)
     {
-        if(inventoryItem.inventoryItemType.isUnique)
-        {
-            if (gameState.inventory.inventoryItems.Contains(inventoryItem))
-            {
-                gameState.inventory.inventoryItems.Add(inventoryItem);
-                switch(inventoryItem.inventoryItemType.inventoryTypeAction)
-                {
-                    case InventoryItemType.InventoryTypeAction.ITA_STORY:
-                        new GameStateAction().startStoryTelling();
-                        break;
-                    case InventoryItemType.InventoryTypeAction.ITA_RESETLEVEL:
-                        new GameStateAction().resetLevel();
-                        break;                        
-                    case InventoryItemType.InventoryTypeAction.ITA_NEWTARGET:
-                        new GameStateAction().newElement();
-                        break;
-                }
-            }
-        }
-        else
-        {
-            gameState.inventory.inventoryItems.Add(inventoryItem);
+        gameState.inventory.inventoryItems.Add(inventoryItem);
+
+        if(isPictureFinished()) {
+            nextScene();
         }
     }
 
@@ -79,6 +61,10 @@ public class GameStateManager : MonoBehaviour
         SceneManager.LoadScene("MainLevel");
     }
 
+    private void gameOver() {
+        SceneManager.LoadScene("GameOver");
+    }
+
 
 
     // Start is called before the first frame update
@@ -90,7 +76,6 @@ public class GameStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isPictureFinished())
-            nextScene();
+        //
     }
 }
