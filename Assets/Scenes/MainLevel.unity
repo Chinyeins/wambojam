@@ -318,6 +318,7 @@ GameObject:
   m_Component:
   - component: {fileID: 46400411}
   - component: {fileID: 46400410}
+  - component: {fileID: 46400412}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -401,6 +402,22 @@ Transform:
   m_Father: {fileID: 1107055863}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &46400412
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46400409}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &59127416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1748,6 +1765,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wohnzimmerlampe blend (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223639932434330405, guid: d80658874e252304994698695294aa89, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
+    - target: {fileID: 2223639932434330405, guid: d80658874e252304994698695294aa89, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223639932434330405, guid: d80658874e252304994698695294aa89, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d80658874e252304994698695294aa89, type: 3}
 --- !u!4 &276610088 stripped
@@ -2661,8 +2690,9 @@ Animation:
   m_GameObject: {fileID: 505258115}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ea5c925f3a6871f418c1066d6110d9a2, type: 2}
-  m_Animations: []
+  m_Animation: {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -5200,6 +5230,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wohnzimmerlampe blend (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223639932434330405, guid: d80658874e252304994698695294aa89, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
+    - target: {fileID: 2223639932434330405, guid: d80658874e252304994698695294aa89, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223639932434330405, guid: d80658874e252304994698695294aa89, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d80658874e252304994698695294aa89, type: 3}
 --- !u!4 &771489794 stripped
@@ -5788,6 +5830,10 @@ PrefabInstance:
     - target: {fileID: 3591751929290723179, guid: 5e605c437417e2042892c3138f2172ad, type: 3}
       propertyPath: m_Name
       value: Point Light (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591751929290723180, guid: 5e605c437417e2042892c3138f2172ad, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3591751929290723181, guid: 5e605c437417e2042892c3138f2172ad, type: 3}
       propertyPath: m_Range
@@ -6562,6 +6608,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wohnzimmerlampe blend (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2223639932434330405, guid: d80658874e252304994698695294aa89, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
+    - target: {fileID: 2223639932434330405, guid: d80658874e252304994698695294aa89, type: 3}
+      propertyPath: m_Animations.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2223639932434330405, guid: d80658874e252304994698695294aa89, type: 3}
+      propertyPath: m_Animations.Array.data[0]
+      value: 
+      objectReference: {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d80658874e252304994698695294aa89, type: 3}
 --- !u!4 &960938499 stripped
