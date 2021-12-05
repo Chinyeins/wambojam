@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Lightning : MonoBehaviour
 {
+  public GameObject Ghost;
+
   public float minDelay = 5;
   public float maxDelay = 30;
   public float minLight = .03f;
   public float maxLight = 0.1f;
   void Start()
   {
+    Ghost.gameObject.SetActive(false);
     StartCoroutine(PlayLightning());
   }
 
@@ -22,6 +25,7 @@ public class Lightning : MonoBehaviour
     {
       isActive = !isActive;
       float randomLight = Random.Range(minLight, maxLight);
+      Ghost.gameObject.SetActive(isActive);
       transform.GetChild(0).gameObject.SetActive(isActive);
       yield return new WaitForSeconds(randomLight);
     }
