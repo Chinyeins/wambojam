@@ -18,8 +18,6 @@ public class Lightning : MonoBehaviour
     bool isActive = transform.GetChild(0).gameObject.activeSelf;
     float randomAmount = Random.Range(1, 3) * 2;
 
-    Debug.Log("Amount" + randomAmount);
-
     for (int i = 0; i < randomAmount; i += 1)
     {
       isActive = !isActive;

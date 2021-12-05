@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Interactive
   - StoryTellingUI
+  - Levels
   layers:
   - Default
   - TransparentFX

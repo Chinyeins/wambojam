@@ -6,42 +6,58 @@ using UnityEngine.SceneManagement;
 public class GameStateManager : MonoBehaviour
 {
 
-    public GameState gameState;
+  public GameObject Levels;
+  public GameObject Player;
 
-    public void collectInventoryItem(Snippet snippet)
+  public GameState gameState;
+
+  public void collectInventoryItem(Snippet snippet)
+  {
+    if (!gameState.pictureOfMother.snippets.Contains(snippet))
     {
-        if (!gameState.pictureOfMother.snippets.Contains(snippet))
-            gameState.pictureOfMother.snippets.Add(snippet);
-
-        if (isPictureFinished())
-        {
-            gameOver();
-        }
+      gameState.pictureOfMother.snippets.Add(snippet);
+      EnableLevel(gameState.pictureOfMother.snippets.Count - 1);
     }
 
-    private bool isPictureFinished()
+    if (isPictureFinished())
     {
-        return gameState.pictureOfMother.snippets.Count == 6;
+      // gameOver();
     }
+  }
+
+  private bool isPictureFinished()
+  {
+    return gameState.pictureOfMother.snippets.Count == 6;
+  }
+
+  void EnableLevel(int id)
+  {
+    GameObject.FindGameObjectWithTag("Levels").transform.GetChild(id).gameObject.SetActive(true);
+    ResetPlayer();
+  }
+
+  void ResetPlayer()
+  {
+    Player.transform.position = new Vector3(-3.3f, 5.5f, 66.4f);
+  }
+
+
+  private void gameOver()
+  {
+    SceneManager.LoadScene("GameOver");
+  }
 
 
 
-    private void gameOver()
-    {
-        SceneManager.LoadScene("GameOver");
-    }
+  // Start is called before the first frame update
+  void Start()
+  {
+    gameState = new GameState();
+  }
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameState = new GameState();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //
-    }
+  // Update is called once per frame
+  void Update()
+  {
+    //
+  }
 }
