@@ -10,7 +10,8 @@ TrueTypeFontImporter:
   includeFontData: 1
   fontNames:
   - The Solitude
-  fallbackFontReferences: []
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: b1ba8c1acb4f29d4d936845eca239b23, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
