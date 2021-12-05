@@ -17,6 +17,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: A_StoryTellingItemVariant
       objectReference: {fileID: 0}
+    - target: {fileID: 2588023470758581996, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2501395
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588023470758581996, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.006217473
+      objectReference: {fileID: 0}
+    - target: {fileID: 2588023470758581996, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2501395
+      objectReference: {fileID: 0}
     - target: {fileID: 4753192081610618273, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
       propertyPath: SnippedImage
       value: 
