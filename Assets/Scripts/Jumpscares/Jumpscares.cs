@@ -56,12 +56,18 @@ public class Jumpscares : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((System.DateTime.Now-lastJumpscare).TotalSeconds>nextJumpscareSeconds)
+        if((System.DateTime.Now-lastJumpscare).TotalSeconds>nextJumpscareSeconds && GameObject.Find("GameState").GetComponent<GameStateManager>().snippetFound)
         {
             lastJumpscare = System.DateTime.Now;
             nextJumpscareSeconds = genNextJumpscareSeconds();
             jumpingJackFlash();
         }
+        else if(!GameObject.Find("GameState").GetComponent<GameStateManager>().snippetFound)
+        {
+            lastJumpscare = System.DateTime.Now;
+            nextJumpscareSeconds = genNextJumpscareSeconds();
+        }
+
         if(running)
         {
             
@@ -84,7 +90,7 @@ public class Jumpscares : MonoBehaviour
             {
                 if (jumpScareObjectInstance != null)
                 {
-                    jumpScareObjectInstance.transform.position = Vector3.Lerp(jumpScareObjectInstance.transform.position, jumpscarePosition.GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions[0].transform.position, 0.0025f);
+                    jumpScareObjectInstance.transform.position = Vector3.Lerp(jumpScareObjectInstance.transform.position, jumpscarePosition.GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions[0].transform.position, 0.001f);
                     if (jumpScareObjectInstance.transform.position == jumpscarePosition.GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions[0].transform.position)
                     {
                         GameObject.Destroy(jumpScareObjectInstance);

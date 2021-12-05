@@ -10,18 +10,19 @@ public class GameStateManager : MonoBehaviour
   public GameObject Player;
 
   public GameState gameState;
-
+  public bool snippetFound = false;
   public void collectInventoryItem(Snippet snippet)
   {
     if (!gameState.pictureOfMother.snippets.Contains(snippet))
     {
       gameState.pictureOfMother.snippets.Add(snippet);
       EnableLevel(gameState.pictureOfMother.snippets.Count - 1);
+      snippetFound = true;
     }
 
     if (isPictureFinished())
     {
-      // gameOver();
+       gameOver();
     }
   }
 
