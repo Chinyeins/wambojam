@@ -2666,6 +2666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1121240525159649772, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
+      propertyPath: enableAudioSFX
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2026787183891125014, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
       propertyPath: fog.enabled
       value: 0
@@ -8879,8 +8883,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223694214}
   m_LocalRotation: {x: -0.0019195375, y: -0.9957279, z: 0.08985827, w: -0.021161107}
-  m_LocalPosition: {x: -47.48, y: 74.714, z: -718.46}
-  m_LocalScale: {x: 0.6495701, y: 0.64957, z: 0.6495701}
+  m_LocalPosition: {x: -47.48, y: 73.81, z: -718.46}
+  m_LocalScale: {x: 1.2411336, y: 1.2411333, z: 1.2411336}
   m_Children: []
   m_Father: {fileID: 1409589125}
   m_RootOrder: 15
@@ -10724,7 +10728,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1409589125
 Transform:
   m_ObjectHideFlags: 0
