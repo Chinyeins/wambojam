@@ -13,6 +13,10 @@ PrefabInstance:
         wurde aus diesem Grund in ihrem Zimmer eingesperrt. Ich muss sie irgendwie
         da rausholen, aber zuerst muss ich zu ihr gelangen.\u201C"
       objectReference: {fileID: 0}
+    - target: {fileID: 249701271719036037, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2573727547917367177, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
       propertyPath: m_Name
       value: A_StoryTellingItemVariant
@@ -77,5 +81,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 249701271719036037, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d3bc78be249d8f845bb11a0059b4d4cf, type: 3}
