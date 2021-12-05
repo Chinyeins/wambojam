@@ -1491,7 +1491,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d80658874e252304994698695294aa89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.034
+      value: -0.977
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d80658874e252304994698695294aa89, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2245,7 +2245,7 @@ Transform:
   m_LocalScale: {x: 0.10000002, y: 0.1, z: 0.10000002}
   m_Children: []
   m_Father: {fileID: 1521685220}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!212 &434097569
 SpriteRenderer:
@@ -2678,30 +2678,6 @@ PrefabInstance:
     - target: {fileID: 1016811562307140906, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121240525159649772, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
-      propertyPath: walkSpeed
-      value: 7.54
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121240525159649772, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
-      propertyPath: cameraSmoothing
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1121240525159649772, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
-      propertyPath: mouseSensitivity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026787183891125014, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
-      propertyPath: fog.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026787183891125014, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
-      propertyPath: m_ShowToolkit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2026787183891125014, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
-      propertyPath: m_ShowCustomSorter
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3013463235367392014, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
       propertyPath: m_IsActive
@@ -9746,8 +9722,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 728207972}
   - {fileID: 434097568}
+  - {fileID: 728207972}
   - {fileID: 554784876}
   m_Father: {fileID: 843146714}
   m_RootOrder: 4
@@ -13152,11 +13128,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3591751929290723178, guid: 5e605c437417e2042892c3138f2172ad, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: -0.0027
       objectReference: {fileID: 0}
     - target: {fileID: 3591751929290723178, guid: 5e605c437417e2042892c3138f2172ad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.211
+      value: -0.23
       objectReference: {fileID: 0}
     - target: {fileID: 3591751929290723178, guid: 5e605c437417e2042892c3138f2172ad, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13205,6 +13181,10 @@ PrefabInstance:
     - target: {fileID: 3591751929290723181, guid: 5e605c437417e2042892c3138f2172ad, type: 3}
       propertyPath: m_Color.r
       value: 0.6415094
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591751929290723181, guid: 5e605c437417e2042892c3138f2172ad, type: 3}
+      propertyPath: m_Intensity
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5e605c437417e2042892c3138f2172ad, type: 3}

@@ -273,7 +273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: mouseSensitivity
-      value: 1.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114051214696948948, guid: 2e62f5703e5f8d2488a5e1bc8433be41, type: 3}
       propertyPath: jumpLandIntensity
@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caa248df483c6940a213196a7ced25e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OutlineColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  OutlineColor: {r: 1, g: 0, b: 0, a: 1}
   OutlineWidth: 5
 --- !u!114 &2026787183891125014
 MonoBehaviour:
@@ -361,7 +361,7 @@ MonoBehaviour:
     fastMode: 0
     keepAlpha: 0
   fog:
-    enabled: 1
+    enabled: 0
     excludeSkybox: 1
   debugLayer:
     lightMeter:
@@ -385,8 +385,8 @@ MonoBehaviour:
       colorBlindnessType: 0
       colorBlindnessStrength: 1
   m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
+  m_ShowToolkit: 1
+  m_ShowCustomSorter: 1
   breakBeforeColorGrading: 0
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
