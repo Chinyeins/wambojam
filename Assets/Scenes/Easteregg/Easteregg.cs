@@ -37,6 +37,7 @@ public class Easteregg : MonoBehaviour
             
             if((System.DateTime.Now-start).TotalSeconds>5)
             {
+                cheat = new char[]{ 'a', 'a', 'a', 'a', 'a' };
                 loaded = false;
                 GameObject.Find("CameraHolder").GetComponent<CameraHolder>().camera.SetActive(true);
                 SceneManager.UnloadScene("Easteregg");
