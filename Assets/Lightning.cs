@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Lightning : MonoBehaviour
 {
-  float minDelay = 5;
-  float maxDelay = 30;
-  float minLight = .03f;
-  float maxLight = 0.1f;
+  public float minDelay = 5;
+  public float maxDelay = 30;
+  public float minLight = .03f;
+  public float maxLight = 0.1f;
   void Start()
   {
     StartCoroutine(PlayLightning());
