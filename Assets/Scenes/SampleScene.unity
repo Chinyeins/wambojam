@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 24086057}
   - component: {fileID: 24086056}
+  - component: {fileID: 24086058}
   m_Layer: 0
   m_Name: Point Light (2)
   m_TagString: Untagged
@@ -216,6 +217,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!111 &24086058
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 24086055}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 358b5254b1ce072498af712787dd3591, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &59960342 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1016811562307140906, guid: 6e91a12179de47d4ba1ba372283d553b, type: 3}
@@ -1318,6 +1335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 434691260}
   - component: {fileID: 434691259}
+  - component: {fileID: 434691261}
   m_Layer: 0
   m_Name: Point Light (1)
   m_TagString: Untagged
@@ -1337,7 +1355,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 100
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1401,6 +1419,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &434691261
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434691258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a2cccaaa4bd530c4fa38486c7625a49b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &434795418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2941,7 +2978,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4d7ce9973d09bce428eb75166eeef8ed, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4d7ce9973d09bce428eb75166eeef8ed, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3901,6 +3938,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1451860663}
   m_CullTransparentMesh: 1
+--- !u!1 &1472258499 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d80658874e252304994698695294aa89, type: 3}
+  m_PrefabInstance: {fileID: 1741560605}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1472258501
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1472258499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 721119d865c37d24ba56f3aa240b6b85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1480409569
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4686,7 +4747,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d80658874e252304994698695294aa89, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.498
+      value: 9.462
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d80658874e252304994698695294aa89, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4727,7 +4788,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: d80658874e252304994698695294aa89, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 1411963244729087060, guid: d80658874e252304994698695294aa89, type: 3}
+      objectReference: {fileID: 2100000, guid: 169827a3d99b97c4e935d262d90c0e61, type: 2}
     - target: {fileID: 919132149155446097, guid: d80658874e252304994698695294aa89, type: 3}
       propertyPath: m_Name
       value: Wohnzimmerlampe blend (1)
