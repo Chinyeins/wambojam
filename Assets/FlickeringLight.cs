@@ -18,7 +18,13 @@ public class FlickeringLight : MonoBehaviour
     /// </summary>
     private void playAnimation() {
         if(PlayAnimationEverySeconds > 1.0f) {
+            this.anim.Play();
             Invoke("playAnimation", PlayAnimationEverySeconds);
         } 
     }
+
+
+
+
+
 }
