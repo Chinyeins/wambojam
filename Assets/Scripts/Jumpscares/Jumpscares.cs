@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Jumpscares : MonoBehaviour
 {
     private System.DateTime lastJumpscare = System.DateTime.Now;
     private long nextJumpscareSeconds = 0;
-    
+    private bool running = false;
+    private bool blubb = false;
 
     private long genNextJumpscareSeconds()
     {
@@ -16,21 +18,20 @@ public class Jumpscares : MonoBehaviour
 
     private void jumpingJackFlash()
     {
-        int countJumpScarePosition = new System.Random().Next(0, GameObject.Find("LocalJumpscarePositions").GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions.Count - 1);
-        GameObject jumpscarePosition = GameObject.Find("LocalJumpscarePositions").GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions[countJumpScarePosition];
+       
 
-        int countJumpScareObject = new System.Random().Next(0, GameObject.Find("LocalJumpscareObjectHolder").GetComponent<LocalJumpscareObjectHolder>().jumpscareObjects.Count - 1);
-        GameObject jumpscareObject = GameObject.Find("LocalJumpscareObjectHolder").GetComponent<LocalJumpscareObjectHolder>().jumpscareObjects[countJumpScarePosition];
+        running = true;
 
-        GameObject jumpScareObjectInstance=GameObject.Instantiate(jumpscareObject);
 
-        jumpScareObjectInstance.transform.position = jumpscarePosition.transform.position;
-        jumpScareObjectInstance.GetComponent<AudioSource>().PlayOneShot(jumpScareObjectInstance.GetComponent<AudioSource>().clip);
-        jumpScareObjectInstance.GetComponent<Animator>().SetTrigger("walkTrigger");
-        AnimationClip clip = jumpScareObjectInstance.GetComponent<Animator>().runtimeAnimatorController.animationClips[0];
+        //jumpScareObjectInstance.GetComponent<NavMeshAgent>().enabled = true;
+        //!!!        jumpScareObjectInstance.GetComponent<AudioSource>().PlayOneShot(jumpScareObjectInstance.GetComponent<AudioSource>().clip);
+        //jumpScareObjectInstance.GetComponent<NavMeshAgent>().destination=jumpscarePosition.GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions[0].transform.position;
+      //  jumpScareObjectInstance.GetComponent<NavMeshAgent>().Move( jumpscarePosition.GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions[0].transform.position);
+        //jumpScareObjectInstance.GetComponent<Animator>().SetTrigger("walkTrigger");
+        //AnimationClip clip = jumpScareObjectInstance.GetComponent<Animator>().runtimeAnimatorController.animationClips[0];
 
-        StartCoroutine(WaitForAnimation(clip, jumpScareObjectInstance));
-        
+        //StartCoroutine(WaitForAnimation(clip, jumpScareObjectInstance));
+
     }
 
 
@@ -51,7 +52,7 @@ public class Jumpscares : MonoBehaviour
         GameObject.Destroy(jsi);
     }
 
-
+    GameObject jumpScareObjectInstance;
     // Update is called once per frame
     void Update()
     {
@@ -61,5 +62,38 @@ public class Jumpscares : MonoBehaviour
             nextJumpscareSeconds = genNextJumpscareSeconds();
             jumpingJackFlash();
         }
+        if(running)
+        {
+            
+            int countJumpScarePosition = new System.Random().Next(0, GameObject.Find("LocalJumpscarePositions").GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions.Count - 1);
+            GameObject jumpscarePosition = GameObject.Find("LocalJumpscarePositions").GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions[countJumpScarePosition];
+            if (!blubb)
+            {
+                
+                
+
+                int countJumpScareObject = new System.Random().Next(0, GameObject.Find("LocalJumpscareObjectHolder").GetComponent<LocalJumpscareObjectHolder>().jumpscareObjects.Count - 1);
+                GameObject jumpscareObject = GameObject.Find("LocalJumpscareObjectHolder").GetComponent<LocalJumpscareObjectHolder>().jumpscareObjects[countJumpScarePosition];
+
+                jumpScareObjectInstance = GameObject.Instantiate(jumpscareObject);
+                jumpscarePosition.GetComponent<GhostObject>().ghostObject = jumpScareObjectInstance;
+                //jumpScareObjectInstance.GetComponent<NavMeshAgent>().enabled = false;
+                jumpScareObjectInstance.transform.position = jumpscarePosition.transform.position;
+            }
+            blubb = true;
+            {
+                if (jumpScareObjectInstance != null)
+                {
+                    jumpScareObjectInstance.transform.position = Vector3.Lerp(jumpScareObjectInstance.transform.position, jumpscarePosition.GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions[0].transform.position, 0.0025f);
+                    if (jumpScareObjectInstance.transform.position == jumpscarePosition.GetComponent<LocalJumpscarePositionHolder>().jumpscarePositions[0].transform.position)
+                    {
+                        GameObject.Destroy(jumpScareObjectInstance);
+                        blubb = false;
+                        running = false;
+                    }
+                }
+            }
+        }
+        
     }
 }
