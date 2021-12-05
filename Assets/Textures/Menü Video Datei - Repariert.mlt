@@ -47,17 +47,17 @@
       <property name="darker">40</property>
       <property name="lighter">40</property>
       <property name="mlt_service">lines</property>
-      <property name="line4">260</property>
+      <property name="line4">227</property>
       <property name="typeline4">2</property>
-      <property name="line3">1591</property>
+      <property name="line3">1532</property>
       <property name="typeline3">1</property>
-      <property name="line2">1725</property>
+      <property name="line2">1703</property>
       <property name="typeline2">1</property>
-      <property name="line1">531</property>
+      <property name="line1">597</property>
       <property name="typeline1">1</property>
-      <property name="line0">1874</property>
+      <property name="line0">1908</property>
       <property name="typeline0">1</property>
-      <property name="last_oldfilm_line_pos">0</property>
+      <property name="last_oldfilm_line_pos">1</property>
     </filter>
     <filter id="filter1" out="00:00:03.960">
       <property name="delta">14</property>
@@ -82,12 +82,71 @@
     <property name="shotcut:name">V1</property>
     <entry producer="producer1" in="00:00:00.000" out="00:00:03.960"/>
   </playlist>
+  <producer id="producer2" in="00:00:00.000" out="03:59:59.960">
+    <property name="length">04:00:00.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">c:/Users/chris/Documents/Blender FBX Unity/textures/GameJam21_Logo.png</property>
+    <property name="ttl">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="progressive">1</property>
+    <property name="seekable">1</property>
+    <property name="mlt_service">qimage</property>
+    <property name="creation_time">2021-12-05T14:28:43</property>
+    <property name="shotcut:hash">04a099c88b5c1bf37d5df2a23a18edaa</property>
+    <property name="shotcut:caption">GameJam21_Logo.png</property>
+    <filter id="filter3" out="00:00:03.960">
+      <property name="background">color:#00000000</property>
+      <property name="mlt_service">affine</property>
+      <property name="shotcut:filter">affineSizePosition</property>
+      <property name="transition.fill">1</property>
+      <property name="transition.distort">0</property>
+      <property name="transition.rect">790.144 -19.7938 1131.46 1131.46 1</property>
+      <property name="transition.valign">middle</property>
+      <property name="transition.halign">center</property>
+      <property name="shotcut:animIn">00:00:00.000</property>
+      <property name="shotcut:animOut">00:00:00.000</property>
+      <property name="transition.threads">0</property>
+    </filter>
+    <filter id="filter4" out="00:00:03.960">
+      <property name="delta">14</property>
+      <property name="every">20</property>
+      <property name="brightnessdelta_up">20</property>
+      <property name="brightnessdelta_down">30</property>
+      <property name="brightnessdelta_every">70</property>
+      <property name="unevendevelop_up">60</property>
+      <property name="unevendevelop_down">20</property>
+      <property name="unevendevelop_duration">70</property>
+      <property name="mlt_service">oldfilm</property>
+    </filter>
+    <filter id="filter5" out="00:00:03.960">
+      <property name="maxdiameter">2</property>
+      <property name="maxcount">10</property>
+      <property name="mlt_service">dust</property>
+      <property name="cache-dy-4-38">58</property>
+      <property name="cache-dy-0-38">34</property>
+      <property name="cache-dy-1-38">50</property>
+      <property name="cache-dy-3-38">89</property>
+      <property name="cache-dy-2-38">23</property>
+    </filter>
+    <filter id="filter6" out="00:00:03.960">
+      <property name="version">0.3</property>
+      <property name="mlt_service">frei0r.saturat0r</property>
+      <property name="threads">0</property>
+      <property name="0">0.01875</property>
+    </filter>
+  </producer>
+  <playlist id="playlist1">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V2</property>
+    <entry producer="producer2" in="00:00:00.000" out="00:00:03.960"/>
+  </playlist>
   <tractor id="tractor0" title="Shotcut version 21.09.22" in="00:00:00.000" out="00:00:03.960">
     <property name="shotcut">1</property>
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">0</property>
     <track producer="background"/>
     <track producer="playlist0"/>
+    <track producer="playlist1"/>
     <transition id="transition0">
       <property name="a_track">0</property>
       <property name="b_track">1</property>
@@ -102,6 +161,21 @@
       <property name="mlt_service">frei0r.cairoblend</property>
       <property name="threads">0</property>
       <property name="disable">1</property>
+    </transition>
+    <transition id="transition2">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition3">
+      <property name="a_track">1</property>
+      <property name="b_track">2</property>
+      <property name="version">0.9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">0</property>
     </transition>
   </tractor>
 </mlt>
