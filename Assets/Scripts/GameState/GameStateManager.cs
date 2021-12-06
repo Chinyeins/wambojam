@@ -22,7 +22,7 @@ public class GameStateManager : MonoBehaviour
 
     if (isPictureFinished())
     {
-      Invoke("gameOver", 15f);
+       //gameOver();
     }
   }
 
