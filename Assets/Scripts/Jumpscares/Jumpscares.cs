@@ -85,8 +85,8 @@ public class Jumpscares : MonoBehaviour
                 jumpscarePosition.GetComponent<GhostObject>().ghostObject = jumpScareObjectInstance;
                 //jumpScareObjectInstance.GetComponent<NavMeshAgent>().enabled = false;
                 jumpScareObjectInstance.transform.position = jumpscarePosition.transform.position;
-            }
-            blubb = true;
+                blubb = true;
+            }            
             {
                 if (jumpScareObjectInstance != null)
                 {

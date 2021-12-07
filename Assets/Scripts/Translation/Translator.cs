@@ -14,8 +14,10 @@ public class Translator : MonoBehaviour
     } 
     public string translate(string text)
     {
-
-        return translation[language].translation[text];
+        if (translation[language].translation.ContainsKey(text))
+            return translation[language].translation[text];
+        else
+            return text;
     }
     // Start is called before the first frame update
     void Start()
